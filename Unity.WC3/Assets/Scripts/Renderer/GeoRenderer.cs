@@ -50,14 +50,15 @@ namespace war3
         protected void SetupMaterials()
         {
             GeoMaterial geoMaterial = _mdx.materialsInfo[_geo.materialID];
+            Material[] materials = new Material[geoMaterial.layers.Count];
             for (int i = 0;i < geoMaterial.layers.Count;i++)
             {
                 GeoMaterialLayer geoMatLayer = geoMaterial.layers[i];
                 TextureInfo textureInfo = _mdx.texturesInfo[geoMatLayer.textureID];
                 
                 Shader shader = Shader.Find("Unlit/ObjectRenderer");
-                UnityEngine.Material material = new Material(shader);
-                _meshRenderer.sharedMaterial = material;
+                var material = new Material(shader);
+                materials[i] = material;
 
                 if (textureInfo.imagePath != "" && 
                     (TextureInfo.EReplaceable)textureInfo.replaceableId == TextureInfo.EReplaceable.ALLOW)
@@ -71,8 +72,9 @@ namespace war3
                     Texture2D texture = Resources.Load<Texture2D>(path);
                     material.SetTexture(MainTex,texture);
                 }
-
             }
+
+            _meshRenderer.sharedMaterials = materials;
 
         }
         
