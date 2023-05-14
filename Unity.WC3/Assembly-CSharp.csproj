@@ -45,7 +45,7 @@
      <Compile Include="Assets\Scripts\3rd\LitJson\JsonMockWrapper.cs" />
      <Compile Include="Assets\Scripts\3rd\LitJson\JsonException.cs" />
      <Compile Include="Assets\Scripts\3rd\LitJson\JsonWriter.cs" />
-     <Compile Include="Assets\Scripts\MeshRenderer.cs" />
+     <Compile Include="Assets\Scripts\Renderer\MeshRenderer.cs" />
      <Compile Include="Assets\Scripts\3rd\LitJson\JsonReader.cs" />
      <Compile Include="Assets\Scripts\3rd\LitJson\ParserToken.cs" />
      <Compile Include="Assets\Scripts\3rd\LitJson\Lexer.cs" />
@@ -53,9 +53,12 @@
      <Compile Include="Assets\Scripts\3rd\LitJson\IJsonWrapper.cs" />
      <Compile Include="Assets\Scripts\3rd\LitJson\JsonData.cs" />
      <Compile Include="Assets\Scripts\3rd\LitJson\JsonMapper.cs" />
-     <Compile Include="Assets\Scripts\Model\MDXParser.cs" />
+     <Compile Include="Assets\Scripts\Model\MDXJSONParser.cs" />
      <Compile Include="Assets\Scripts\MenuResourceViewer.cs" />
      <Compile Include="Assets\Scripts\Model\MDXBinParser.cs" />
+     <Compile Include="Assets\Scripts\Renderer\MDXRenderer.cs" />
+     <Compile Include="Assets\Scripts\Material\MaterialFactory.cs" />
+     <Compile Include="Assets\Scripts\Renderer\GeoRenderer.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Resources\test.mdx.txt" />
@@ -80,6 +83,7 @@
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
+     <None Include="Assets\Materials\MDX.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

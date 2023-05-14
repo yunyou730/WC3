@@ -7,7 +7,7 @@ namespace war3
     public class WMeshRenderer
     {
         private static readonly int MainTex = Shader.PropertyToID("_MainTex");
-
+        
         public void Init(GameObject go,List<Vector3> newVertices,List<int> newTriangles,List<Vector2> newUV,Texture2D texture)
         {
             MeshFilter meshFilter = go.GetComponent<MeshFilter>();

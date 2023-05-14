@@ -53,14 +53,13 @@ public class MenuResourceViewer : MonoBehaviour
         //string str = Resources.Load("farm.mdx").ToString();
         LitJson.JsonData modelData = LitJson.JsonMapper.ToObject(str);
         
-        _mdx = war3.MDXParser.FromJson(modelData);
+        _mdx = war3.MDXJSONParser.FromJson(modelData);
         MDX mdx = _mdx;
-
-
-        GameObject root = new GameObject("Unity Root");
+        
+        GameObject root = new GameObject("Unit Root");
         Texture2D texture = Resources.Load<Texture2D>("Textures_ranger.blp");
         
-        foreach (var geo in mdx.getsets)
+        foreach (var geo in mdx.geosets)
         {
             war3.WMeshRenderer mr = new war3.WMeshRenderer();
             GameObject go = new GameObject();
@@ -68,11 +67,17 @@ public class MenuResourceViewer : MonoBehaviour
             go.AddComponent<MeshRenderer>();
             mr.Init(go,geo.vertices,geo.faces,geo.uv,texture);
             go.transform.parent = root.transform;
-        }   
+        }
     }
     
     public void OnClickParseBin()
     {
-        Debug.Log("parse bin");
+        string mdxString = Resources.Load("test.mdx").ToString();
+        LitJson.JsonData modelData = LitJson.JsonMapper.ToObject(mdxString);
+        var mdx = war3.MDXJSONParser.FromJson(modelData);
+        
+        GameObject go = new GameObject("unit root");
+        war3.MDXRenderer mdxRenderer = go.AddComponent<war3.MDXRenderer>();
+        mdxRenderer.Init(mdx);
     }
 }
